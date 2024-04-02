@@ -1,1 +1,1 @@
-# Blog_jeux_JS
+# blog_jeux_js
