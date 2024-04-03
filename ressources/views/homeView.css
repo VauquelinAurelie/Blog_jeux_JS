@@ -1,7 +1,16 @@
-h2 {
-    text-decoration-color: darkslategrey;
+html {
+    font-family: "DejaVu Serif";
 }
 
-.nav {
-    background-color: darkgrey;
+h2 {
+    text-align: center;
+    color: darkgreen;
+}
+
+nav {
+    background-color: darkgray;
+}
+
+footer {
+    background-color: beige;
 }
