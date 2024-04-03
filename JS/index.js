@@ -1,43 +1,67 @@
+// fonction du menu déroulant
+function menu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// ferme le dropdown lorqu'on clique n'importe où sur la page
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+let nextTodoIndex = 0;
+const maxPosts = 10;
+const section = document.querySelector("section");
 function api() {
     fetch("https://tyradex.tech/api/v1/pokemon") // récupére les informations de l'api
         .then(response => response.json())// transforme le résultat de l'API en JSON
-        .then((reponse2) => {
-            console.log(reponse2); // Affichage des données dans la console
-            afficherData(reponse2); // Appel de la fonction afficherData avec les données
+        .then(pokemons => {
+            // Effacer le contenu précédent de la section
+            section.innerHTML = "";
+            // définir le nombre d'article qui s'affiche
+            for (let i = 0; i < maxPosts && i < pokemons.length; i++) {
+                afficherData(pokemons[i+nextTodoIndex]);
+            }
+            nextTodoIndex += maxPosts;
         })
 }
 
 // affichage des datas de l'api dans le html(dom)
-function afficherData(reponse2){
-    let section = document.querySelector("section");
-    if (reponse2) {
-        // Parcourir les données et créer des éléments HTML pour chaque Pokemon
-        reponse2.forEach(pokemon => {
-            let div = document.createElement("div");
-            let category = document.createElement("p");
-            let name = document.createElement("p");
-            let sprites = document.createElement("img");
+function afficherData(pokemon){
 
-            // Remplir les éléments avec les données du Pokemon
-            category.innerText = "Category: " + pokemon.category;
-            name.innerText = "Name: " + pokemon.name.fr;
-            sprites.src = pokemon.sprites.regular;
+    // créer des éléments HTML pour chaque Pokemon
+    let div = document.createElement("container");
+    let category = document.createElement("p");
+    let name = document.createElement("h3");
+    let sprites = document.createElement("img");
 
-            // Ajouter les éléments créés à la section
-            div.appendChild(category);
-            div.appendChild(name);
-            div.appendChild(sprites);
-            section.appendChild(div);
-        })
-    }
-    else {
-        console.log("Aucune donnée à afficher");
-    }
+    // Remplir les éléments avec les données du Pokemon
+    category.innerText = "Category: " + pokemon.category;
+    name.innerText = "Name: " + pokemon.name.fr;
+    sprites.src = pokemon.sprites.regular;
+
+    // Ajouter les éléments créés à la section
+    div.appendChild(category);
+    div.appendChild(name);
+    div.appendChild(sprites);
+    section.appendChild(div);
+
 }
 
 api() // appel de la fonction api
 
-
+// bouton actualiser
+let refreshButton = document.getElementById('refresh');
+refreshButton.addEventListener('click', api);
 
 
 

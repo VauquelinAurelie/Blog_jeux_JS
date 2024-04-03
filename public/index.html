@@ -9,61 +9,65 @@
     <title>Accueil</title>
     <link href="index.html" type="text/html">
     <link rel="stylesheet" href="/ressources/views/homeView.css" type="text/css">
-    <script src = "../JS/index.js"></script>
 </head>
 <body>
 
-<header>
-    <nav>
-        <header><h2>Accueil</h2></header>
-        <a href="/public/index.html">Accueil</a>
-        <a href="../app/controllers/galleryController.html">Gallerie</a>
-        <a href="../app/controllers/gameController.html">Jeux</a>
-    </nav>
-</header>
+<!--menu déroulant-->
+    <header>
+        <nav class="dropdown">
+            <button onclick="menu()" class="dropbtn">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="/public/index.html">Accueil</a>
+                <a href="../app/controllers/galleryController.html">Gallerie</a>
+                <a href="../app/controllers/gameController.html">Jeux</a>
+            </div>
+        </nav>
+    </header>
 
-<section>
+<!--Affichage dans section des données de l'api via la fonction js afficherData(pokemon)-->
+    <section></section>
+
+    <input type="button" value="Actualiser" id="refresh"/>
 
 
+    <footer class="pt-2">
+        <div class="footer">
+            <div class="adresse">
+                <h4>Nous rencontrer</h4>
+                <p>1 rue Roland Moreno<br/>
+                    26300 Alixan<br/>
+                    04.45.12.34.56<br/>
+                </p>
+            </div>
+            <div class="propos">
+                <h4>A propos</h4>
+                <p>A propos de nous<br/>
+                    Jobs<br/>
+                    Presse<br/>
+                    Protection des données<br/>
+                    CGU & CGV<br/>
+                    Plan du site<br/>
+                </p>
+            </div>
+            <div class="client">
+                <h4>Client</h4>
+                <p>Pourquoi nous ?<br/>
+                    Comment ça marche?<br/>
+                    Offres et tarifs<br/>
+                    Ressources<br/><!--????-->
+                    Retours d'expèrience<br/>
+                    Aide<br/>
+                    SSO<br/>
+                </p>
+            </div>
 
-</section>
-<button>Actualiser</button>
+        </div>
+        <div class="copyright">
+            <br>
+            <span>Copyright c 2024. Tous droits réservés.</span>
+        </div>
+    </footer>
+
+    <script src = "../JS/index.js"></script>
 </body>
-
-<footer class="pt-2">
-    <div>
-        <div>
-            <h4>Nous rencontrer</h4>
-            <p>1 rue Roland Moreno<br/>
-                26300 Alixan<br/>
-                04.45.12.34.56<br/>
-            </p>
-        </div>
-        <div>
-            <h4>A propos</h4>
-            <p>A propos de nous<br/>
-                Jobs<br/>
-                Presse<br/>
-                Protection des données<br/>
-                CGU & CGV<br/>
-                Plan du site<br/>
-            </p>
-        </div>
-        <div>
-            <h4>Client</h4>
-            <p>Pourquoi nous ?<br/>
-                Comment ça marche?<br/>
-                Offres et tarifs<br/>
-                Ressources<br/><!--????-->
-                Retours d'expèrience<br/>
-                Aide<br/>
-                SSO<br/>
-            </p>
-        </div>
-
-    </div>
-    <div>
-        <br>
-        <span>Copyright c 2024. Tous droits réservés.</span>
-    </div>
-</footer>
+</html>
