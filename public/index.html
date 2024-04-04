@@ -9,37 +9,55 @@
     <title>Accueil</title>
     <link href="index.html" type="text/html">
     <link rel="stylesheet" href="/ressources/views/homeView.css" type="text/css">
-    <script src = "../JS/index.js"></script>
 </head>
 <body>
 
+<!--menu déroulant-->
 <header>
-    <nav>
-        <header><h2>Accueil</h2></header>
-        <a href="/public/index.html">Accueil</a>
-        <a href="../app/controllers/galleryController.html">Gallerie</a>
-        <a href="../app/controllers/gameController.html">Jeux</a>
+    <nav class="dropdown">
+        <button onclick="menu()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/public/index.html">Accueil</a>
+            <a href="../app/controllers/galleryController.html">Galerie</a>
+            <a href="../app/controllers/gameController.html">Jeux</a>
+        </div>
     </nav>
 </header>
 
-<section>
+<!--Affichage dans section des données de l'api via la fonction js afficherData(pokemon)-->
+<section></section>
 
+<input type="button" value="Actualiser" id="refresh"/>
 
+<!--Formulaire d'ajout de post-->
+<div class="formulaire">
+    <div class="categorie">
+        <label for="categorie">Category</label> : <input type="text" id="categorie" name="categorie" required>
+    </div>
 
-</section>
-<button>Actualiser</button>
-</body>
+    <div class="name">
+        <label for="name">Name</label> : <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="image">
+        <label for="img">Image</label> : <input type="text" id="img" name="img" required>
+        <!-- Ajoutez un champ d'entrée pour l'URL de l'image -->
+    </div>
+
+    <button type="submit">Ajouter un pokémon</button>
+</div>
+
 
 <footer class="pt-2">
-    <div>
-        <div>
+    <div class="footer">
+        <div class="adresse">
             <h4>Nous rencontrer</h4>
             <p>1 rue Roland Moreno<br/>
                 26300 Alixan<br/>
                 04.45.12.34.56<br/>
             </p>
         </div>
-        <div>
+        <div class="propos">
             <h4>A propos</h4>
             <p>A propos de nous<br/>
                 Jobs<br/>
@@ -49,7 +67,7 @@
                 Plan du site<br/>
             </p>
         </div>
-        <div>
+        <div class="client">
             <h4>Client</h4>
             <p>Pourquoi nous ?<br/>
                 Comment ça marche?<br/>
@@ -62,8 +80,12 @@
         </div>
 
     </div>
-    <div>
+    <div class="copyright">
         <br>
         <span>Copyright c 2024. Tous droits réservés.</span>
     </div>
 </footer>
+<script src = "../JS/menu.js"></script>
+<script src = "../JS/index.js"></script>
+</body>
+</html>

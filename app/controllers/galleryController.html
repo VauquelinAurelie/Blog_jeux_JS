@@ -1,39 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gallerie</title>
+    <title>Galerie</title>
     <link href="index.html" type="text/html">
-    <link href="galleryController.html" type="text/html">
-    <link href="gameController.html" type="text/html">
+    <link rel="stylesheet" href="/ressources/views/galleryView.css" type="text/css">
 </head>
 <body>
 
+<!--menu déroulant-->
 <header>
-    <nav>
-        <header><h2>Gallerie</h2></header>
-        <a href="index.html">Accueil</a>
-        <a href="galleryController.html">Gallerie</a>
-        <a href="gameController.html">Jeux</a>
+    <h1>Galerie</h1>
+    <nav class="dropdown">
+        <button onclick="menu()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/public/index.html">Accueil</a>
+            <a href="../app/controllers/galleryController.html">Galerie</a>
+            <a href="../app/controllers/gameController.html">Jeux</a>
+        </div>
     </nav>
 </header>
 
-</body>
+<!-- affichage de la galerie d'images-->
+<section>
+    <div class="gallery-options">
+        <button onclick="toggleMosaic()" class="mosaic-mode">Afficher en mosaïque</button>
+        <button onclick="toggleColumn()" class="column-mode">Afficher en colonne</button>
+    </div>
+    <div class="gallery">
+        <div id="image-container" class="imageGallery"></div> <!--conteneur pour les images de la galerie -->
+    </div>
+
+</section>
+
+
+
+
+
+
 
 <footer class="pt-2">
-    <div>
-        <div>
+    <div class="footer">
+        <div class="adresse">
             <h4>Nous rencontrer</h4>
             <p>1 rue Roland Moreno<br/>
                 26300 Alixan<br/>
                 04.45.12.34.56<br/>
             </p>
         </div>
-        <div>
-            <h4>Apexware</h4>
+        <div class="propos">
+            <h4>A propos</h4>
             <p>A propos de nous<br/>
                 Jobs<br/>
                 Presse<br/>
@@ -42,12 +62,12 @@
                 Plan du site<br/>
             </p>
         </div>
-        <div>
+        <div class="client">
             <h4>Client</h4>
             <p>Pourquoi nous ?<br/>
                 Comment ça marche?<br/>
                 Offres et tarifs<br/>
-                Ressources<br/><!--????-->
+                Ressources<br/>
                 Retours d'expèrience<br/>
                 Aide<br/>
                 SSO<br/>
@@ -55,8 +75,13 @@
         </div>
 
     </div>
-    <div>
+    <div class="copyright">
         <br>
         <span>Copyright c 2024. Tous droits réservés.</span>
     </div>
 </footer>
+
+<script src = "/JS/menu.js"></script>
+<script src = "/JS/gallery.js"></script>
+</body>
+</html>
