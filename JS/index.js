@@ -1,6 +1,3 @@
-let nextTodoIndex = 0;
-const maxPosts = 10;
-const section = document.querySelector("section");
 function api() {
     fetch("https://tyradex.tech/api/v1/pokemon") // récupére les informations de l'api
         .then(response => response.json())// transforme le résultat de l'API en JSON
