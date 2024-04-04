@@ -54,7 +54,6 @@ function afficherData(pokemon){
     div.appendChild(name);
     div.appendChild(sprites);
     section.appendChild(div);
-
 }
 
 api() // appel de la fonction api
@@ -63,11 +62,39 @@ api() // appel de la fonction api
 let refreshButton = document.getElementById('refresh');
 refreshButton.addEventListener('click', api);
 
+// Ajout d'un pokémon via formulaire
+document.addEventListener('DOMContentLoaded', function() { //  ajoute un écouteur d'événements sur l'objet document, qui détecte quand le DOM est chargé
+    // Récupérer les éléments du formulaire lors du clic sur le bouton de soumission
+    document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêcher le rechargement de la page
 
+        // Récupère les éléments HTML
+        let baliseCategorie = document.querySelector('[name="categorie"]');
+        let baliseName = document.querySelector('[name="name"]');
+        let baliseImg = document.querySelector('[name="img"]');
 
+            // récupère les valeurs du formulaire
+            let categorie = baliseCategorie.value;
+            let name = baliseName.value;
+            let img = baliseImg.value;
 
+            // Crée un nouvel élément div pour afficher les valeurs
+            let div = document.createElement('div');
+            let categoryText = document.createElement('p');
+            let nameText = document.createElement('p');
+            let imgElement = document.createElement('img');
 
+            // Assigner les valeurs aux éléments créés
+            categoryText.textContent = "Catégorie : " + categorie;
+            nameText.textContent = "Nom : " + name;
+            imgElement.src = img;
 
+            // Ajouter les éléments dans la div
+            div.appendChild(categoryText);
+            div.appendChild(nameText);
+            div.appendChild(imgElement);
 
-
-
+            // Ajouter la div dans le document
+            document.body.appendChild(div);
+     });
+});
