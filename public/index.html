@@ -18,7 +18,7 @@
             <button onclick="menu()" class="dropbtn">Menu</button>
             <div id="myDropdown" class="dropdown-content">
                 <a href="/public/index.html">Accueil</a>
-                <a href="../app/controllers/galleryController.html">Gallerie</a>
+                <a href="../app/controllers/galleryController.html">Galerie</a>
                 <a href="../app/controllers/gameController.html">Jeux</a>
             </div>
         </nav>
@@ -28,6 +28,24 @@
     <section></section>
 
     <input type="button" value="Actualiser" id="refresh"/>
+
+<!--Formulaire d'ajout de post-->
+<div class="formulaire">
+    <div class="categorie">
+        <label for="categorie">Category</label> : <input type="text" id="categorie" name="categorie" required>
+    </div>
+
+    <div class="name">
+        <label for="name">Name</label> : <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="image">
+        <label for="img">Image</label> : <input type="text" id="img" name="img" required>
+        <!-- Ajoutez un champ d'entrée pour l'URL de l'image -->
+    </div>
+
+    <button type="submit">Ajouter un pokémon</button>
+</div>
 
 
     <footer class="pt-2">
