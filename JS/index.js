@@ -43,43 +43,40 @@ let refreshButton = document.getElementById('refresh');
 refreshButton.addEventListener('click', api);
 
 // Ajout d'un pokémon via formulaire
-document.addEventListener('DOMContentLoaded', function() { //  ajoute un écouteur d'événements sur l'objet document, qui détecte quand le DOM est chargé
-    // Récupérer les éléments du formulaire lors du clic sur le bouton de soumission
+document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
-        event.preventDefault(); // Empêcher le rechargement de la page
+        event.preventDefault();
 
-        // Récupère les éléments HTML
         let baliseCategorie = document.querySelector('[name="categorie"]');
         let baliseName = document.querySelector('[name="name"]');
         let baliseImg = document.querySelector('[name="img"]');
 
-        // récupère les valeurs du formulaire
         let categorie = baliseCategorie.value;
         let name = baliseName.value;
         let img = baliseImg.value;
 
-        // Crée un nouvel élément div pour afficher les valeurs
         let div = document.createElement('div');
         let categoryText = document.createElement('p');
         let nameText = document.createElement('p');
         let imgElement = document.createElement('img');
+        let deleteButton = document.createElement('button'); // Créer un bouton de suppression
 
-        // Assigner les valeurs aux éléments créés
         categoryText.textContent = "Catégorie : " + categorie;
         nameText.textContent = "Nom : " + name;
         imgElement.src = img;
+        deleteButton.textContent = "X"; // Ajouter le texte au bouton de suppression
+        deleteButton.addEventListener('click', function() {
+            div.remove(); // Supprimer le div entier lorsqu'on clique sur le bouton de suppression
+        });
 
-        // Ajouter les éléments dans la div
         div.appendChild(categoryText);
         div.appendChild(nameText);
         div.appendChild(imgElement);
+        div.appendChild(deleteButton); // Ajouter le bouton de suppression au div
 
-        // Ajouter la div dans le document
         document.body.appendChild(div);
     });
 });
-
-
 
 
 
