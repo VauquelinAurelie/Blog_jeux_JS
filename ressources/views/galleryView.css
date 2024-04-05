@@ -95,6 +95,11 @@ h1 {
     margin-left: 10px;
 }
 
+.addImg button {
+    display: flex;
+    justify-content: center;
+}
+
 footer {
     margin-top: 40px;
     background-color: #a9daa9;
