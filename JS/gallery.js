@@ -40,34 +40,52 @@ api() // appel de la fonction api
 
 
 // ajouter une image à la galerie
-document.addEventListener("DOMContentLoaded", function() { //ajoute un écouteur d'événement à l'objet document
-    const addImageButton = document.getElementById("add-image-btn"); //récupére l'élément avec l'id "add-image-btn" (bouton 'ajouter une image')
-    const imageInput = document.getElementById("image-input"); // récupére l'élément avec l'id "image-input", pour la selection de fichier (html)
-    const galleryContainer = document.getElementById("image-container"); // récupère l'élément avec l'ID "image-container", conteneur d'images de la galerie
+document.addEventListener("DOMContentLoaded", function() {
+    const addImageButton = document.getElementById("add-image-btn");
+    const imageInput = document.getElementById("image-input");
+    const galleryContainer = document.getElementById("image-container");
 
-    addImageButton.addEventListener("click", function() { // écouteur d'événements au bouton "Ajouter une image"
+    addImageButton.addEventListener("click", function() {
         imageInput.click();
     });
 
     // Gestionnaire d'événements pour détecter la sélection de fichier
-    imageInput.addEventListener("change", function(event) { // écouteur de selection de  fichier + lire le contenu du fichier + afficher dans la galerie.
-        const file = event.target.files[0]; // récupère le fichier sélectionné
+    imageInput.addEventListener("change", function(event) {
+        const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                const imageUrl = e.target.result; // récupère l'URL de données de l'image
+                const imageUrl = e.target.result;
 
                 // Création de l'élément img
                 const imageElement = document.createElement("img");
-                imageElement.src = imageUrl; // définit l'attribut src de l'élément <img> sur l'URL
-                imageElement.classList.add("gallery-image"); // ajoute la classe CSS "gallery-image" à l'élément <img>
+                imageElement.src = imageUrl;
+                imageElement.classList.add("gallery-image");
 
-                // Ajout de l'élément img à la galerie
-                galleryContainer.appendChild(imageElement);
+                // Ajout du bouton de suppression
+                const deleteButton = document.createElement("button"); // création du bouton
+                deleteButton.textContent = "X"; // définition du texte du bouton
+                deleteButton.classList.add("delete-image-btn"); // ajoute la classe CSS "delete-image-btn" au bouton
+
+                // Création du conteneur pour l'image et le bouton de suppression
+                const imageContainer = document.createElement("div"); // créé le conteneur pour l'image ajoutée et le bouton de suppression associé.
+                imageContainer.classList.add("gallery-item"); // ajoute la classe CSS "gallery-item" au conteneur
+                imageContainer.appendChild(imageElement); // ajoute l'élément d'image (imageElement) en tant qu'enfant du conteneur d'image
+                imageContainer.appendChild(deleteButton); // ajoute le bouton de suppression (deleteButton) en tant qu'enfant du conteneur d'image
+
+                // Ajout du conteneur à la galerie
+                galleryContainer.appendChild(imageContainer);
             };
-            reader.readAsDataURL(file); // lit le contenu du fichier en tant qu'URL
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Gestionnaire d'événements pour les boutons de suppression
+    galleryContainer.addEventListener("click", function(event) { // ajoute un écouteur au clique du conteneur de la galerie
+        if (event.target.classList.contains("delete-image-btn")) { // condition qui vérifie si l'élément cliqué contient la classe CSS "delete-image-btn"
+            const imageContainer = event.target.parentNode; // si le bouton suppression est cliqué récupèration du conteneur de l'image
+            galleryContainer.removeChild(imageContainer); // Supprime le conteneur de l'image
         }
     });
 });
-
 
