@@ -7,8 +7,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Galerie</title>
-    <link href="index.html" type="text/html">
+    <link href="/public/index.html" type="text/html">
     <link rel="stylesheet" href="/ressources/views/galleryView.css" type="text/css">
+    <link rel="stylesheet" href="/ressources/views/carousel.css" type="text/css">
 </head>
 <body>
 
@@ -25,8 +26,51 @@
     </nav>
 </header>
 
+<!--carousel-->
+    <!-- Conteneur principal pour le carrousel -->
+    <div class="container">
+        <!-- Élément carrousel -->
+        <div class="carousel">
+            <!-- Conteneur interne pour les diapositives -->
+            <div class="carousel-inner">
+                <!--Première diapositive-->
+                <div class="slide">
+                    <!-- Image de la première diapositive -->
+                    <img src="https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                         alt="Image 1">
+                </div>
+
+                <!-- deuxième diapositive -->
+                <div class="slide">
+                    <!-- Image de la deuxième diapositive -->
+                    <img src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                         alt="Image 2">
+                </div>
+
+                <!-- troisième diapositive -->
+                <div class="slide">
+                    <!-- Image de la troisième diapositive -->
+                    <img src="https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                         alt="Image 3">
+                </div>
+
+            </div>
+
+            <!-- Conteneur pour les boutons de navigation -->
+            <div class="carousel-controls">
+                <!-- Bouton pour passer à la diapositive précédente -->
+                <button id="prev"><</button>
+                <!-- Bouton pour passer à la diapositive suivante -->
+                <button id="next">></button>
+            </div>
+            <!-- Conteneur pour les points de navigation -->
+            <div class="carousel-dots"></div>
+        </div>
+    </div>
+
+
 <!-- affichage de la galerie d'images-->
-<section>
+<section class="gallery__image">
     <div class="gallery-options">
         <button onclick="toggleMosaic()" class="mosaic-mode">Afficher en mosaïque</button>
         <button onclick="toggleColumn()" class="column-mode">Afficher en colonne</button>
@@ -84,5 +128,6 @@
 
 <script src = "/JS/menu.js"></script>
 <script src = "/JS/gallery.js"></script>
+<script src = "/JS/carousel.js"></script>
 </body>
 </html>

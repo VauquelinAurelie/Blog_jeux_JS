@@ -67,6 +67,9 @@ h1 {
     padding-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .imageGallery img {
@@ -95,7 +98,7 @@ h1 {
     margin-left: 10px;
 }
 
-.addImg button {
+.addImg {
     display: flex;
     justify-content: center;
 }
@@ -104,6 +107,7 @@ h1 {
     background-color : red;
     height: 20px;
 }
+
 
 footer {
     margin-top: 40px;
@@ -115,10 +119,20 @@ h4{
     margin-left: 15px;
 }
 
-div {
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-right: 15px;
     margin-left: 15px;
+
 }
+
+
+/*div {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+/*    margin-right: 15px;*/
+/*    margin-left: 15px;*/
+/*}*/
