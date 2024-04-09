@@ -1,39 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jeux</title>
-    <link href="index.html" type="text/html">
-    <link href="galleryController.html" type="text/html">
-    <link href="gameController.html" type="text/html">
+    <link href="/public/index.html" type="text/html">
+    <link rel="stylesheet" href="/ressources/views/gameView.css" type="text/css">
+    <link rel="stylesheet" href="/ressources/views/header_footer.css" type="text/css">
 </head>
 <body>
 
+<!--menu déroulant-->
 <header>
-    <nav>
-        <header><h2>Jeux</h2></header>
-        <a href="index.html">Accueil</a>
-        <a href="galleryController.html">Gallerie</a>
-        <a href="gameController.html">Jeux</a>
+    <h1>Jeux</h1>
+    <nav class="dropdown">
+        <button onclick="menu()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/public/index.html">Accueil</a>
+            <a href="../app/controllers/galleryController.html">Galerie</a>
+            <a href="../app/controllers/gameController.html">Jeux</a>
+        </div>
     </nav>
 </header>
 
-</body>
+<!--Jeux pierre feuille ciseaux-->
+<section class="chifoumy">
+<div class="score">
+    <p> <img src="/images/person_FILL1_wght400_GRAD0_opsz24.svg" alt="vous" /> </p>
+    <p> <img src="/images/desktop_windows_FILL0_wght400_GRAD0_opsz24.svg" alt="Ordinateur" /> </p>
+    <p id="score-joueur">0</p>
+    <p id="score-ordinateur">0</p>
+    <div id="reset">Recommencer</div>
+</div>
+<div class="action">
+    <p id="message">A vous de jouer !</p>
+    <div id="next">Tour suivant</div>
+</div>
+<div class="jeu">
+    <div class="choix">
+        <div class="button btn-joueur" id="pierre">
+            <img src= "/images/icons8-roche-100.png" alt="pierre" />
+            <p>Pierre</p>
+        </div>
+        <div class="button btn-joueur" id="feuille">
+            <img src="/images/icons8-papier-64.png" alt="feuille" />
+            <p>Feuille</p>
+        </div>
+        <div class="button btn-joueur" id="ciseaux">
+            <img src="/images/icons8-ciseaux-100.png" alt="ciseaux" />
+            <p>Ciseaux</p>
+        </div>
+    </div>
+
+    <div class="choix">
+        <div class="button btn-ordi" id="opierre">
+            <img src="/images/icons8-roche-100.png" alt="pierre" />
+            <p>Pierre</p>
+        </div>
+        <div class="button btn-ordi" id="ofeuille">
+            <img src="/images/icons8-papier-64.png" alt="feuille" />
+            <p>Feuille</p>
+        </div>
+        <div class="button btn-ordi" id="ociseaux">
+            <img src="/images/icons8-ciseaux-100.png" alt="ciseaux" />
+            <p>Ciseaux</p>
+        </div>
+    </div>
+</div>
+</section>
+
+
 
 <footer class="pt-2">
-    <div>
-        <div>
+    <div class="footer">
+        <div class="adresse">
             <h4>Nous rencontrer</h4>
             <p>1 rue Roland Moreno<br/>
                 26300 Alixan<br/>
                 04.45.12.34.56<br/>
             </p>
         </div>
-        <div>
-            <h4>Apexware</h4>
+        <div class="propos">
+            <h4>A propos</h4>
             <p>A propos de nous<br/>
                 Jobs<br/>
                 Presse<br/>
@@ -42,12 +93,12 @@
                 Plan du site<br/>
             </p>
         </div>
-        <div>
+        <div class="client">
             <h4>Client</h4>
             <p>Pourquoi nous ?<br/>
                 Comment ça marche?<br/>
                 Offres et tarifs<br/>
-                Ressources<br/><!--????-->
+                Ressources<br/>
                 Retours d'expèrience<br/>
                 Aide<br/>
                 SSO<br/>
@@ -55,8 +106,14 @@
         </div>
 
     </div>
-    <div>
+    <div class="copyright">
         <br>
         <span>Copyright c 2024. Tous droits réservés.</span>
     </div>
 </footer>
+
+<script src = "/JS/menu.js"></script>
+<script src = "/JS/game.js"></script>
+
+</body>
+</html>
