@@ -9,11 +9,13 @@
     <title>Accueil</title>
     <link href="index.html" type="text/html">
     <link rel="stylesheet" href="/ressources/views/homeView.css" type="text/css">
+    <link rel="stylesheet" href="/ressources/views/header_footer.css" type="text/css">
 </head>
 <body>
 
 <!--menu déroulant-->
 <header>
+    <h1>Accueil</h1>
     <nav class="dropdown">
         <button onclick="menu()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
@@ -30,7 +32,7 @@
 <input type="button" value="Actualiser" id="refresh"/>
 
 <!--Formulaire d'ajout de post-->
-<div class="formulaire">
+<form class="formulaire">
     <div class="categorie">
         <label for="categorie">Category</label> : <input type="text" id="categorie" name="categorie" required>
     </div>
@@ -45,7 +47,7 @@
     </div>
 
     <button type="submit">Ajouter un pokémon</button>
-</div>
+</form>
 
 
 <footer class="pt-2">
