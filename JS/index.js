@@ -44,7 +44,7 @@ refreshButton.addEventListener('click', api);
 
 // Ajout d'un pokémon via formulaire
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+    document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault();
 
         let baliseCategorie = document.querySelector('[name="categorie"]');
