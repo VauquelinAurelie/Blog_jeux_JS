@@ -1,10 +1,11 @@
+// jeux Pierre feuille ciseaux
 let resetBtn = document.getElementById("reset");
 let scoreJoueur = document.getElementById("score-joueur");
 let scoreOrdinateur = document.getElementById("score-ordinateur");
 let btnJoueur = [...document.getElementsByClassName("btn-joueur")];
-let opierreBtn = document.getElementById("opierre");
-let ofeuilleBtn = document.getElementById("ofeuille");
-let ociseauxBtn = document.getElementById("ociseaux");
+let pierreBtn = document.getElementById("pierre");
+let feuilleBtn = document.getElementById("feuille");
+let ciseauxBtn = document.getElementById("ciseaux");
 let message = document.getElementById("message");
 let nextBtn = document.getElementById("next");
 
@@ -41,43 +42,43 @@ const faireChoixOridnateur = () => {
 
     switch (nbAleatoire) {
         case 0:
-            opierreBtn.classList.add("active");
+            pierreBtn.classList.add("active");
             return PIERRE;
         case 1:
-            ofeuilleBtn.classList.add("active");
+            feuilleBtn.classList.add("active");
             return FEUILLE;
         default:
-            ociseauxBtn.classList.add("active");
+            ciseauxBtn.classList.add("active");
             return CISEAUX;
     }
 };
 
 const verifierGagnant = (choixJoueur, choixOrdi) => {
-    if (choixJoueur == choixOrdi) {
+    if (choixJoueur === choixOrdi) {
         message.textContent = "Egalité !";
         return;
     }
 
-    if (choixJoueur == PIERRE) {
-        if (choixOrdi == FEUILLE) {
+    if (choixJoueur === PIERRE) {
+        if (choixOrdi === FEUILLE) {
             return victoireOrdinateur();
-        } else if (choixOrdi == CISEAUX) {
+        } else if (choixOrdi === CISEAUX) {
             return victoireJoueur();
         }
     }
 
-    if (choixJoueur == FEUILLE) {
-        if (choixOrdi == CISEAUX) {
+    if (choixJoueur === FEUILLE) {
+        if (choixOrdi === CISEAUX) {
             return victoireOrdinateur();
-        } else if (choixOrdi == PIERRE) {
+        } else if (choixOrdi === PIERRE) {
             return victoireJoueur();
         }
     }
 
-    if (choixJoueur == CISEAUX) {
-        if (choixOrdi == PIERRE) {
+    if (choixJoueur === CISEAUX) {
+        if (choixOrdi === PIERRE) {
             return victoireOrdinateur();
-        } else if (choixOrdi == FEUILLE) {
+        } else if (choixOrdi === FEUILLE) {
             return victoireJoueur();
         }
     }
@@ -103,9 +104,9 @@ const preparerNouvelleManche = () => {
 
     nextBtn.style.visibility = "hidden";
 
-    opierreBtn.classList.remove("active");
-    ofeuilleBtn.classList.remove("active");
-    ociseauxBtn.classList.remove("active");
+    pierreBtn.classList.remove("active");
+    feuilleBtn.classList.remove("active");
+    ciseauxBtn.classList.remove("active");
 
     message.textContent = "A vous de jouer !";
 };
@@ -120,3 +121,5 @@ resetBtn.addEventListener("click", () => {
 
     preparerNouvelleManche();
 });
+
+
