@@ -1,7 +1,10 @@
 /*jeux pierre feuille ciseaux*/
 
-section {
+section.chifoumy {
     border: solid darkslategray;
+    margin: 5px;
+    height: auto;
+    width: 1000px;
 }
 
 :root {

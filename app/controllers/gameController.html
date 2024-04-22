@@ -10,6 +10,7 @@
     <link href="/public/index.html" type="text/html">
     <link rel="stylesheet" href="/ressources/views/gameView.css" type="text/css">
     <link rel="stylesheet" href="/ressources/views/header_footer.css" type="text/css">
+    <link rel="stylesheet" href="/ressources/views/memory.css" type="text/css">
 </head>
 <body>
 
@@ -28,6 +29,7 @@
 
 <!--Jeux pierre feuille ciseaux-->
 <section class="chifoumy">
+    <h2>Pierre Feuille Ciseaux</h2>
 <div class="score">
     <p> <img src="/images/person_FILL1_wght400_GRAD0_opsz24.svg" alt="vous" /> </p>
     <p> <img src="/images/desktop_windows_FILL0_wght400_GRAD0_opsz24.svg" alt="Ordinateur" /> </p>
@@ -72,7 +74,24 @@
 </div>
 </section>
 
-
+<section class="memoryGame">
+    <h2>Memory</h2>
+    <p>Score : <span id="score">0</span></p>
+    <div class="memory">
+        <img src="/images/dos-carte-s10-hearthstone.jpg" id="test">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+        <img src="/images/dos-carte-s10-hearthstone.jpg">
+    </div>
+</section>
 
 <footer class="pt-2">
     <div class="footer">
@@ -83,28 +102,6 @@
                 04.45.12.34.56<br/>
             </p>
         </div>
-        <div class="propos">
-            <h4>A propos</h4>
-            <p>A propos de nous<br/>
-                Jobs<br/>
-                Presse<br/>
-                Protection des données<br/>
-                CGU & CGV<br/>
-                Plan du site<br/>
-            </p>
-        </div>
-        <div class="client">
-            <h4>Client</h4>
-            <p>Pourquoi nous ?<br/>
-                Comment ça marche?<br/>
-                Offres et tarifs<br/>
-                Ressources<br/>
-                Retours d'expèrience<br/>
-                Aide<br/>
-                SSO<br/>
-            </p>
-        </div>
-
     </div>
     <div class="copyright">
         <br>
@@ -114,6 +111,7 @@
 
 <script src = "/JS/menu.js"></script>
 <script src = "/JS/game.js"></script>
+<script src = "/JS/memory.js"></script>
 
 </body>
 </html>
